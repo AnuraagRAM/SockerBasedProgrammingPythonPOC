@@ -1,11 +1,17 @@
 from flask import Flask, render_template
-from flask_socketio import SocketIO, Namespace
+from flask_socketio import SocketIO
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'secret!'
+app.config['SECRET_KEY'] = 'secret!'  # It helps to encrypt the session data
 app.config['DEBUG'] = True
 
-# turn the flask app into a socketio app
+"""
+    Run Flask app in Socket.io
+    async_mode help to pick one from the model. Valid async modes are threading, eventlet, gevent and gevent_uwsgi.
+    It it is not mentioned it pick in from the hierarchy eventlet is tried first,
+        then gevent_uwsgi, then gevent, and finally threading
+    Logger for logging
+"""
 socketio = SocketIO(app, async_mode=None, logger=True, engineio_logger=True)
 
 

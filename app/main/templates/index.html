@@ -3,10 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
     <!-- <script src="static/js/application.js"></script> -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <style>
         /* Style the header */
         header {
@@ -40,8 +40,8 @@
 <script>
 $(document).ready(function(){
     // connect to the socket server.
-    // var socket = io.connect('http://127.0.0.1:5000/index');
-    var socket = io.connect('http://' + document.domain + ':' + location.port +'/index');
+    var socket = io.connect('http://127.0.0.1:5000/index');
+    //var socket = io.connect('http://' + document.domain + ':' + location.port +'/index');
 
     //receive details about the status
     socket.on('status',function(msg) {
