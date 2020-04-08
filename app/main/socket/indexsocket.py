@@ -27,6 +27,7 @@ class PocSocketBasedProgramming(Namespace):
         :return:
         """
         root_log.error('Client disconnected')
+        socketio.send('Disconnected')
 
     def on_time(self):
         """
