@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask
 from flask_socketio import SocketIO
 
 app = Flask(__name__)
@@ -14,14 +14,17 @@ app.config['DEBUG'] = True
 """
 socketio = SocketIO(app, async_mode=None, logger=True, engineio_logger=True)
 
-
-@app.route('/')
-def index():
-    # only by sending this page first will the client be connected to the socketio instance
-    return render_template('index.html')
-
-
-from app.main.socket.indexsocket import PocSocketBasedProgramming
+from flask_api.app.main.socket.indexsocket import PocSocketBasedProgramming
 
 socketio.on_namespace(PocSocketBasedProgramming('/index'))
+
+"""
+    To render a html page with restendpoint use this.
+    @app.route('/')
+    def index():
+        # only by sending this page first will the client be connected to the socketio instance
+        return render_template('index.html')
+"""
+
+
 

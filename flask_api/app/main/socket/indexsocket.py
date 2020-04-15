@@ -1,8 +1,8 @@
 from flask_socketio import Namespace
 from threading import Thread, Event
-from app.main import socketio
+from flask_api.app.main import socketio
 import time
-from app.main.utils.logging import root_log
+from flask_api.app.main.utils.logging import root_log
 
 
 class PocSocketBasedProgramming(Namespace):
